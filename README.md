@@ -72,10 +72,10 @@ GitHub Copilot を使うには GitHub アカウントと Copilot へのアクセ
 
 | サーフェス | 用途 | 開き方 |
 |------------|------|--------|
-| **Agents Window** | 複数プロジェクトをまたぐ高レベルなタスクのオーケストレーション専用画面 | タイトルバー「Open in Agents」/ コマンド `Chat: Open Agents Window` / ターミナル `code --agents` |
-| **Chat View** | サイドバー統合のコード中心アシスタント | チャットアイコン / コマンド `Chat: Open Chat` / `Ctrl+Alt+I`（Mac: `⌃⌘I`） |
-| **Inline Chat** | エディタ内・ターミナルでのその場の編集・提案 | `Ctrl+I`（Mac: `⌘I`） |
-| **Quick Chat** | エディタ上部の軽量パネル。手早いやり取り | `Ctrl+Shift+Alt+L`（Mac: `⇧⌥⌘L`） |
+| **Agents Window** | 複数プロジェクトをまたいだ大きめのタスクを、まとめて指揮できる専用画面 | タイトルバー「Open in Agents」/ コマンド `Chat: Open Agents Window` / ターミナル `code --agents` |
+| **Chat View** | サイドバーに常駐する、コード作業のメイン相棒 | チャットアイコン / コマンド `Chat: Open Chat` / `Ctrl+Alt+I`（Mac: `⌃⌘I`） |
+| **Inline Chat** | エディタやターミナルで、その場でサッと編集・提案してくれる | `Ctrl+I`（Mac: `⌘I`） |
+| **Quick Chat** | エディタ上部にパッと出る軽量パネル。ちょい聞きに便利 | `Ctrl+Shift+Alt+L`（Mac: `⇧⌥⌘L`） |
 
 > **出典:** [Use Copilot Chat in VS Code — VS Code Docs](https://code.visualstudio.com/docs/copilot/chat/copilot-chat) / [Chat agent mode — VS Code Docs](https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode)
 
@@ -89,65 +89,65 @@ GitHub Copilot を使うには GitHub アカウントと Copilot へのアクセ
 
 | コマンド | 説明 |
 |----------|------|
-| `/doc` | インラインチャットでコードのドキュメントコメントを生成 |
-| `/explain` | コードブロック・ファイル・概念を説明 |
-| `/fix` | コードの修正、コンパイラ/リンタエラーの解決を依頼 |
-| `/tests` | 全体または選択メソッド・関数のテストを生成 |
-| `/setupTests` | テストフレームワークのセットアップを支援 |
-| `/fixTestFailure` | 失敗テストを分析して修正案を出す |
+| `/doc` | コードにドキュメントコメントを付けてくれる（インラインチャット） |
+| `/explain` | 「このコード何してる？」に答える。コードブロック・ファイル・概念を説明してくれる |
+| `/fix` | バグやコンパイラ/リンタのエラーを直してくれる |
+| `/tests` | ファイル全体や選んだメソッド・関数のテストを書いてくれる |
+| `/setupTests` | テストフレームワークの導入・初期設定を手伝ってくれる |
+| `/fixTestFailure` | 落ちたテストを分析して、直し方を出してくれる |
 
 ### セッション管理系
 
 | コマンド | 説明 |
 |----------|------|
-| `/clear` | チャットビューで新しいセッションを開始 |
-| `/compact` | 会話コンテキストを要約して圧縮（`/compact <指示>` で条件付き圧縮も可） |
-| `/fork` | 会話履歴を引き継いだ独立した新セッションに分岐 |
-| `/debug` | Chat Debug ビューを表示してチャットログを確認 |
-| `/troubleshoot` | エージェントのデバッグログを AI に分析させる（プレビュー） |
-| `/help`※ | Copilot 利用の基本クイックリファレンス |
+| `/clear` | 履歴をリセットして、新しいセッションを始める |
+| `/compact` | 話が長くなった時に、会話を要約して圧縮しコンテキストを節約（`/compact <指示>` で条件付き圧縮も可） |
+| `/fork` | 今の会話を引き継いだまま、別ルートの新セッションに枝分かれする |
+| `/debug` | Chat Debug ビューを開いて、チャットログを覗ける |
+| `/troubleshoot` | うまく動かない時、エージェントのデバッグログを AI に分析させる（プレビュー） |
+| `/help`※ | Copilot の基本的な使い方をサッと確認できる |
 
 ### 生成・スキャフォールド系
 
 | コマンド | 説明 |
 |----------|------|
-| `/new` | 新しいワークスペースまたはファイルを生成 |
-| `/newNotebook` | 要件に基づき新しい Jupyter ノートブックを生成 |
-| `/init` | ワークスペースの instructions を生成・更新 |
-| `/plan` | 複雑なコーディングタスクの詳細な実装計画を作成 |
-| `/search` | Search ビュー用の検索クエリを生成 |
-| `/startDebugging` | `launch.json` を生成してデバッグを開始 |
+| `/new` | 新しいワークスペースやファイルを一から作ってくれる |
+| `/newNotebook` | やりたいことを伝えると、Jupyter ノートブックを用意してくれる |
+| `/init` | プロジェクト用のカスタム指示（instructions）を作る・更新してくれる |
+| `/plan` | 複雑な作業に入る前に、詳しい実装プランを立ててくれる |
+| `/search` | Search ビューに入れる検索クエリを組み立ててくれる |
+| `/startDebugging` | `launch.json` を作って、デバッグまで始めてくれる |
 
 ### カスタマイズ設定系
 
 | コマンド | 説明 |
 |----------|------|
-| `/agents` | カスタムエージェントを設定（Configure Custom Agents メニュー） |
-| `/instructions` | カスタム指示を設定 |
-| `/prompts` | 再利用可能なプロンプトファイルを設定 |
-| `/skills` | エージェントスキルを設定 |
-| `/hooks` | フックを設定 |
-| `/create-instruction` | AI 補助で instructions ファイルを生成 |
-| `/create-prompt` | Agent モードで AI 補助でプロンプトファイルを生成 |
-| `/create-skill` | Agent モードでエージェントスキルを生成 |
-| `/create-agent` | Agent モードでカスタムエージェントを生成 |
-| `/create-hook` | フック設定を生成 |
+| `/agents` | カスタムエージェントを設定できる（Configure Custom Agents メニュー） |
+| `/instructions` | カスタム指示を設定できる |
+| `/prompts` | 再利用できるプロンプトファイルを設定できる |
+| `/skills` | エージェントスキルを設定できる |
+| `/hooks` | フックを設定できる |
+| `/create-instruction` | AI に手伝ってもらって instructions ファイルを作る |
+| `/create-prompt` | Agent モードで、AI 補助でプロンプトファイルを作る |
+| `/create-skill` | Agent モードでエージェントスキルを作る |
+| `/create-agent` | Agent モードでカスタムエージェントを作る |
+| `/create-hook` | フック設定を作る |
 
 ### 自動承認（YOLO）系
 
 | コマンド | 説明 |
 |----------|------|
-| `/yolo`（= `/autoApprove`） | すべてのツール呼び出しのグローバル自動承認を有効化 |
-| `/disableYolo`（= `/disableAutoApprove`） | グローバル自動承認を無効化 |
+| `/yolo`（= `/autoApprove`） | 毎回の確認をやめて、全ツール呼び出しを自動承認にする |
+| `/disableYolo`（= `/disableAutoApprove`） | 自動承認をやめて、確認ありに戻す |
 
 ### 動的コマンド（スキル・プロンプト・プラグイン・MCP）
 
 | コマンド | 説明 |
 |----------|------|
-| `/<skill name>` | 名前付きエージェントスキルを実行（例 `/webapp-testing for the login page`、引数も渡せる） |
-| `/<prompt name>` | 名前付き再利用プロンプトを実行 |
-| `/<plugin name>:<skill>` | プラグイン配布スキル。プラグイン名が接頭辞として自動付与（例 `/my-plugin:test-runner`） |
-| `/<MCP server>.<prompt>` | MCP サーバーが提供する事前構成プロンプトテンプレートを呼び出す |
+| `/<skill name>` | 名前付きのエージェントスキルを呼び出して実行（例 `/webapp-testing for the login page`、引数も渡せる） |
+| `/<prompt name>` | 保存してある再利用プロンプトを呼び出して実行 |
+| `/<plugin name>:<skill>` | プラグイン配布のスキルを実行。プラグイン名が接頭辞として自動で付く（例 `/my-plugin:test-runner`） |
+| `/<MCP server>.<prompt>` | MCP サーバーが用意した、事前構成済みのプロンプトテンプレートを呼び出す |
 
 > **出典:** [AI features cheat sheet — VS Code Docs](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet) / [Custom agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents) / [Prompt files](https://code.visualstudio.com/docs/copilot/customization/prompt-files) / [Agent skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills) / [MCP servers](https://code.visualstudio.com/docs/copilot/customization/mcp-servers)
 > ※ `/help` は GitHub 公式チートシートに VS Code 向けとして記載（[GitHub Docs cheat sheet](https://docs.github.com/en/copilot/reference/cheat-sheet)）。VS Code 公式チートシートには未掲載。
@@ -166,11 +166,11 @@ GitHub Copilot を使うには GitHub アカウントと Copilot へのアクセ
 
 | コマンド | 説明 |
 |----------|------|
-| `/chronicle:standup` | 最近のセッションをブランチ・リポジトリ別にまとめたスタンドアップ報告にする |
-| `/chronicle:tips` | 最近のセッション履歴（通常7日分）を分析し、Copilot をより効果的に使う方法を提案 |
-| `/chronicle:cost-tips` | トークン消費とコストを削減できる箇所を特定 |
-| `/chronicle:search <query>` | キーワード・ファイルパス・PR/Issue 参照でセッションを検索 |
-| `/chronicle:reindex` | ローカルのセッションインデックスを再構築しアカウントへ同期 |
+| `/chronicle:standup` | 「昨日なにやったっけ？」に答える。最近の作業をブランチ・リポジトリ別にまとめて、朝会の報告に使える文章にしてくれる |
+| `/chronicle:tips` | 最近のセッション履歴（通常7日分）を見て、「ここはこう頼むと早い」と Copilot の使い方の改善案を出してくれる |
+| `/chronicle:cost-tips` | トークン（コスト）をムダに使っている箇所を見つけて、節約ポイントを教えてくれる |
+| `/chronicle:search <query>` | 「あの修正どこでやった？」を探す。キーワード・ファイルパス・PR/Issue 番号で過去のセッションを検索してくれる |
+| `/chronicle:reindex` | 履歴が検索に出てこない時に、ローカルの索引を作り直してアカウントへ同期し直す |
 
 > **出典:** [Query session history with chronicle — VS Code Docs](https://code.visualstudio.com/docs/agents/sessions/session-insights)
 
@@ -184,11 +184,11 @@ GitHub Copilot を使うには GitHub アカウントと Copilot へのアクセ
 
 | 参加者 | 説明 | 出典 |
 |--------|------|------|
-| `@github` | GitHub リポジトリ・Issue・PR について尋ねる | VS Code / GitHub 両方 |
-| `@terminal` | 統合ターミナル・シェルコマンドについて尋ねる | VS Code / GitHub 両方 |
-| `@vscode` | VS Code の機能・設定・拡張機能 API について尋ねる | VS Code / GitHub 両方 |
-| `@workspace` | ワークスペースのコード（構造・設計パターン）について尋ねる | GitHub のみ記載 |
-| `@azure` | Azure サービスについて尋ねる（パブリックプレビュー） | GitHub のみ記載 |
+| `@github` | GitHub のリポジトリ・Issue・PR について聞ける | VS Code / GitHub 両方 |
+| `@terminal` | ターミナルやシェルコマンドについて聞ける | VS Code / GitHub 両方 |
+| `@vscode` | VS Code 自体の機能・設定・拡張機能 API について聞ける | VS Code / GitHub 両方 |
+| `@workspace` | 今のワークスペースのコード（構造・設計パターン）について聞ける | GitHub のみ記載 |
+| `@azure` | Azure のサービスについて聞ける（パブリックプレビュー） | GitHub のみ記載 |
 
 > **出典:** [AI features cheat sheet — VS Code Docs](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)（`@github`/`@terminal`/`@vscode`）/ [GitHub Docs cheat sheet](https://docs.github.com/en/copilot/reference/cheat-sheet)（`@workspace`/`@azure` を含む）
 > **メモ:** 2 つの公式ソースで掲載される参加者に差がある。利用バージョンによって使える参加者が異なるため、`@` を打って実際の候補を確認するのが確実。
@@ -203,16 +203,16 @@ GitHub Copilot を使うには GitHub アカウントと Copilot へのアクセ
 
 | 変数 | 説明 |
 |------|------|
-| `#file` | 特定ファイルを参照 |
-| `#folder` | フォルダー全体を参照 |
-| `#symbol` / `#sym:Name` | コードシンボルを参照（`#sym:` で名前指定して自動変換） |
-| `#selection` | 現在のエディタ選択範囲 |
-| `#codebase` | コードベース全体（自動管理インデックスへのセマンティック検索） |
-| `#changes` | ソース管理の変更を参照 |
-| `#fetch` | Web URL のコンテンツを取得して参照 |
-| `#terminalSelection` | ターミナルの選択範囲・出力を参照 |
-| `#problems` | Problems パネルの問題を参照 |
-| `#web` | Web 上の最新情報を取得 |
+| `#file` | 指定したファイルを材料として渡す |
+| `#folder` | フォルダーをまるごと材料として渡す |
+| `#symbol` / `#sym:Name` | 関数やクラスなどのシンボルを材料として渡す（`#sym:` で名前指定して自動変換） |
+| `#selection` | 今エディタで選んでいる範囲を渡す |
+| `#codebase` | コードベース全体から、関連箇所を意味検索して渡す（自動管理インデックス） |
+| `#changes` | ソース管理（Git）の変更内容を渡す |
+| `#fetch` | 指定した Web URL の中身を取ってきて渡す |
+| `#terminalSelection` | ターミナルの選択範囲・出力を渡す |
+| `#problems` | Problems パネルのエラー・警告を渡す |
+| `#web` | Web から最新情報を取ってくる |
 
 > **出典:** [AI features cheat sheet](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet) / [Manage chat context](https://code.visualstudio.com/docs/chat/copilot-chat-context) / [Chat tools](https://code.visualstudio.com/docs/chat/chat-tools)
 
@@ -237,26 +237,26 @@ Agent モードでは `#` でツール／ツールセットを指定できる。
 
 | ツールセット | 主なサブツール | 説明 |
 |--------------|----------------|------|
-| `#agent` | `runSubagent` | 他エージェントへ委譲 / 隔離サブエージェントで実行 |
-| `#browser` | — | 統合ブラウザのページ操作（実験的） |
-| `#edit` | `createFile` / `createDirectory` / `editFiles` / `editNotebook` | ワークスペースの編集系 |
-| `#execute` | `runInTerminal` / `getTerminalOutput` / `createAndRunTask` / `runNotebookCell` / `testFailure` | コード・タスク・ターミナル実行系 |
-| `#read` | `readFile` / `problems` / `terminalLastCommand` / `terminalSelection` / `getNotebookSummary` / `readNotebookCellOutput` | 読み取り系 |
-| `#search` | `codebase` / `fileSearch` / `textSearch` / `listDirectory` / `changes` / `usages` | ファイル・コード検索系 |
-| `#vscode` | `runCommand` / `extensions` / `installExtension` / `getProjectSetupInfo` / `askQuestions` / `VSCodeAPI` | VS Code 操作・拡張機能系 |
-| `#web` | `fetch` | Web コンテンツ取得 |
+| `#agent` | `runSubagent` | 別のエージェントに任せる／隔離したサブエージェントで動かす |
+| `#browser` | — | 内蔵ブラウザでページを操作する（実験的） |
+| `#edit` | `createFile` / `createDirectory` / `editFiles` / `editNotebook` | ファイルの作成・編集をやる系 |
+| `#execute` | `runInTerminal` / `getTerminalOutput` / `createAndRunTask` / `runNotebookCell` / `testFailure` | コードやタスク、ターミナルを実行する系 |
+| `#read` | `readFile` / `problems` / `terminalLastCommand` / `terminalSelection` / `getNotebookSummary` / `readNotebookCellOutput` | ファイルや出力を読み取る系 |
+| `#search` | `codebase` / `fileSearch` / `textSearch` / `listDirectory` / `changes` / `usages` | ファイルやコードを探す系 |
+| `#vscode` | `runCommand` / `extensions` / `installExtension` / `getProjectSetupInfo` / `askQuestions` / `VSCodeAPI` | VS Code の操作・拡張機能まわり系 |
+| `#web` | `fetch` | Web の中身を取ってくる |
 
 **単独ツール:**
 
 | ツール | 説明 |
 |--------|------|
-| `#githubRepo` | GitHub リポジトリをセマンティック検索 |
-| `#githubTextSearch` | GitHub リポジトリ/組織を grep 風にテキスト検索 |
-| `#newWorkspace` | 新規ワークスペースを作成 |
-| `#todos` | TODO リストで進捗を追跡 |
-| `#rename` | LSP を使った高精度なリネーム/リファクタ |
-| `#usages` | 参照検索・実装検索・定義移動の統合 |
-| `#debugEventsSnapshot` | デバッグイベントのスナップショットをコンテキスト添付 |
+| `#githubRepo` | GitHub リポジトリを意味ベースで検索してくれる |
+| `#githubTextSearch` | GitHub のリポジトリ/組織を grep みたいにテキスト検索してくれる |
+| `#newWorkspace` | 新しいワークスペースを作ってくれる |
+| `#todos` | TODO リストで進捗を追いかけてくれる |
+| `#rename` | LSP を使って、安全に正確なリネーム/リファクタをしてくれる |
+| `#usages` | 参照検索・実装検索・定義ジャンプをまとめて引ける |
+| `#debugEventsSnapshot` | デバッグイベントのスナップショットを材料として添える |
 
 > **出典:** [AI features cheat sheet — VS Code Docs](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet) / [Chat tools](https://code.visualstudio.com/docs/chat/chat-tools) / [Chat modes（`#tool:` 構文）](https://code.visualstudio.com/docs/copilot/chat/chat-modes)
 > **メモ:** ツールセットはユーザー定義もできる（複数ツールを束ねた `#<myset>`）。
@@ -273,82 +273,82 @@ GitHub Copilot CLI は、VS Code の統合ターミナルで `copilot` と入力
 
 | コマンド | 説明 |
 |----------|------|
-| `/clear [PROMPT]` | 新しい会話を開始 |
-| `/compact [FOCUS]` | 会話履歴を要約してコンテキスト消費を削減 |
-| `/context` | コンテキストウィンドウのトークン使用量を表示 |
-| `/copy` | 直前の応答をクリップボードにコピー |
-| `/rename [NAME]` | 現セッションの名前変更（省略時は自動命名） |
-| `/resume [SESSION-ID]` | 一覧から別セッションへ切替 |
-| `/search [QUERY]` | 会話タイムラインを検索 |
-| `/session [SUBCOMMAND]` | セッション管理（info/checkpoints/files/plan/rename/cleanup/prune/delete/delete-all） |
-| `/share [FORMAT] [TYPE] [PATH]` | セッションを Markdown/HTML/gist に共有 |
-| `/undo`・`/rewind` | 直前のターンを巻き戻しファイル変更を戻す |
-| `/usage` | セッション使用量メトリクス・統計を表示 |
-| `/restart` | セッションを保持したまま CLI を再起動 |
-| `/ask QUESTION` | 履歴に残さず軽い質問をする |
+| `/clear [PROMPT]` | 履歴をリセットして、新しい会話を始める |
+| `/compact [FOCUS]` | 会話が長くなった時に、要約してコンテキスト消費を減らす |
+| `/context` | 今どれだけトークンを使っているか表示する |
+| `/copy` | 直前の返答をクリップボードにコピーする |
+| `/rename [NAME]` | 今のセッションに名前をつける（省略すると自動で命名） |
+| `/resume [SESSION-ID]` | 一覧から過去のセッションを選んで再開する |
+| `/search [QUERY]` | これまでの会話タイムラインを検索する |
+| `/session [SUBCOMMAND]` | セッションを管理する（info/checkpoints/files/plan/rename/cleanup/prune/delete/delete-all） |
+| `/share [FORMAT] [TYPE] [PATH]` | セッションを Markdown/HTML/gist で共有する |
+| `/undo`・`/rewind` | 直前のターンを巻き戻して、ファイルの変更も元に戻す |
+| `/usage` | このセッションの使用量・統計を表示する |
+| `/restart` | セッションは残したまま、CLI を再起動する |
+| `/ask QUESTION` | 履歴に残さず、サッと軽い質問をする |
 
 ### 作業・エージェント実行
 
 | コマンド | 説明 |
 |----------|------|
-| `/plan [PROMPT]` | コーディング前に実装計画を作成 |
-| `/research TOPIC` | GitHub 検索と Web ソースで深掘りリサーチ |
-| `/review [PROMPT]` | コードレビューエージェントで変更を分析 |
-| `/rubber-duck [PROMPT]` | ラバーダックエージェントにセカンドオピニオンを相談 |
-| `/fleet [PROMPT]` | タスクの一部を並列サブエージェントで実行 |
-| `/delegate [PROMPT]` | 変更をリモートに委任し AI 生成 PR を作成（autopilot） |
-| `/agent` | カスタムエージェントを一覧・選択 |
-| `/diff` | カレントの変更をレビュー |
-| `/pr [SUBCOMMAND]` | カレントブランチの PR を管理（表示・作成・修正） |
-| `/worktree [BRANCH]` | 新しい Git worktree を作成して切替 |
-| `/after [DELAY PROMPT]` | 単発のプロンプト/コマンドをスケジュール |
-| `/every [INTERVAL PROMPT]` | 繰り返しプロンプト/skill/コマンドをスケジュール |
-| `/tasks` | タスク（サブエージェント/シェル）の表示・管理 |
-| `/chronicle [SUBCOMMAND]` | セッション履歴ツール（`standup`/`tips`/`cost tips`/`search`/`improve`/`reindex`） |
+| `/plan [PROMPT]` | コードを書く前に、実装プランを立ててくれる |
+| `/research TOPIC` | GitHub 検索と Web ソースで深掘りリサーチしてくれる |
+| `/review [PROMPT]` | コードレビュー担当のエージェントが変更をチェックしてくれる |
+| `/rubber-duck [PROMPT]` | ラバーダック相手にセカンドオピニオンをもらう |
+| `/fleet [PROMPT]` | タスクを分けて、並列のサブエージェントに同時にやらせる |
+| `/delegate [PROMPT]` | 作業をリモートに丸投げして、AI が PR まで作ってくれる（autopilot） |
+| `/agent` | カスタムエージェントを一覧から選ぶ |
+| `/diff` | 今の変更内容を確認する |
+| `/pr [SUBCOMMAND]` | 今のブランチの PR を管理する（表示・作成・修正） |
+| `/worktree [BRANCH]` | 新しい Git worktree を作って、そっちに移る |
+| `/after [DELAY PROMPT]` | プロンプト/コマンドを、後で1回だけ実行するよう予約する |
+| `/every [INTERVAL PROMPT]` | プロンプト/skill/コマンドを、一定間隔で繰り返すよう予約する |
+| `/tasks` | 走っているタスク（サブエージェント/シェル）を見る・管理する |
+| `/chronicle [SUBCOMMAND]` | 過去のセッション履歴を検索・要約する（`standup`/`tips`/`cost tips`/`search`/`improve`/`reindex`） |
 
 ### 設定・環境・権限
 
 | コマンド | 説明 |
 |----------|------|
-| `/init` | リポジトリ向けカスタム指示・エージェント機能を初期化 |
-| `/instructions` | カスタム指示ファイルの表示・トグル |
-| `/settings [OPTION]` | 設定ダイアログを開く/インライン設定/リセット |
-| `/model`・`/models [MODEL]` | 使用する AI モデルを選択 |
-| `/mcp [SUBCOMMAND]` | MCP サーバ設定を管理（show/add/edit/delete/disable/enable/auth/reload） |
-| `/plugin [SUBCOMMAND]` | プラグイン/マーケットプレイス管理 |
-| `/skills [SUBCOMMAND]` | skills を管理 |
-| `/extensions [SUBCOMMAND]` | CLI 拡張を管理 |
-| `/lsp [SUBCOMMAND]` | 言語サーバ設定を管理 |
-| `/permissions [SUBCOMMAND]` | ツール/パス承認の表示・クリア |
-| `/allow-all [on\|off\|show]` | 全権限（ツール/パス/URL）を有効化 |
-| `/reset-allowed-tools` | 許可ツールのリストをリセット |
-| `/add-dir PATH` | ファイルアクセス許可リストにディレクトリを追加 |
-| `/list-dirs` | アクセス許可済みディレクトリを一覧 |
-| `/sandbox [enable\|disable]` | シェルコマンドのサンドボックスを設定 |
-| `/remote [on\|off]` | リモート操作（GitHub.com/モバイルから監視・操作）の状態表示/有効化 |
-| `/experimental [on\|off\|show]` | 実験的機能のトグル/設定/表示 |
-| `/cwd`・`/cd [PATH]` | 作業ディレクトリを変更/表示 |
-| `/env` | 読み込み済み環境詳細（指示/MCP/skills/agents/plugins 等）を表示 |
-| `/ide` | IDE ワークスペースに接続 |
-| `/keep-alive [OPTION]` | マシンのスリープを防止 |
-| `/statusline` | ステータスラインの表示項目を設定 |
-| `/theme [OPTION]` | カラーモードの表示/設定 |
-| `/terminal-setup` | 複数行入力対応のためターミナルを設定 |
+| `/init` | このリポジトリ用のカスタム指示・エージェント機能を初期セットアップする |
+| `/instructions` | カスタム指示ファイルを表示・オンオフする |
+| `/settings [OPTION]` | 設定を開く・その場でいじる・リセットする |
+| `/model`・`/models [MODEL]` | 使う AI モデルを選ぶ |
+| `/mcp [SUBCOMMAND]` | MCP サーバの設定を管理する（show/add/edit/delete/disable/enable/auth/reload） |
+| `/plugin [SUBCOMMAND]` | プラグインやマーケットプレイスを管理する |
+| `/skills [SUBCOMMAND]` | skills を管理する |
+| `/extensions [SUBCOMMAND]` | CLI 拡張を管理する |
+| `/lsp [SUBCOMMAND]` | 言語サーバ（LSP）の設定を管理する |
+| `/permissions [SUBCOMMAND]` | ツール/パスの承認状況を見る・クリアする |
+| `/allow-all [on\|off\|show]` | 全権限（ツール/パス/URL）を一括で許可する |
+| `/reset-allowed-tools` | 許可済みツールの一覧をリセットする |
+| `/add-dir PATH` | アクセスを許可するディレクトリを追加する |
+| `/list-dirs` | アクセスを許可したディレクトリを一覧する |
+| `/sandbox [enable\|disable]` | シェルコマンドのサンドボックスを設定する |
+| `/remote [on\|off]` | GitHub.com やモバイルからの監視・操作を表示/有効化する |
+| `/experimental [on\|off\|show]` | 実験的機能をオンオフ・設定・表示する |
+| `/cwd`・`/cd [PATH]` | 作業ディレクトリを変える/表示する |
+| `/env` | 読み込み済みの環境（指示/MCP/skills/agents/plugins 等）を表示する |
+| `/ide` | IDE のワークスペースに接続する |
+| `/keep-alive [OPTION]` | マシンがスリープしないようにする |
+| `/statusline` | ステータスラインに出す項目を設定する |
+| `/theme [OPTION]` | カラーテーマを表示/設定する |
+| `/terminal-setup` | 複数行入力できるように、ターミナルを設定する |
 
 ### アカウント・メンテ・その他
 
 | コマンド | 説明 |
 |----------|------|
-| `/login`・`/logout` | Copilot にログイン/ログアウト |
-| `/user [SUBCOMMAND]` | 現在の GitHub ユーザーを管理 |
-| `/update`・`/upgrade` | CLI を最新に更新 |
-| `/downgrade VERSION` | 指定バージョンの CLI を DL して再起動 |
-| `/version` | バージョン情報表示と更新チェック |
-| `/changelog [OPTIONS]` | CLI の変更履歴を表示（AI 要約オプションあり） |
-| `/feedback`・`/bug` | CLI へのフィードバック送信 |
-| `/help` | 対話コマンドのヘルプ表示 |
-| `/exit`・`/quit` | CLI を終了 |
-| `/clikit [COMPONENT]`・`/tuikit [COMPONENT]` | CLI/TUI のデザインコンポーネントをプレビュー |
+| `/login`・`/logout` | Copilot にログイン/ログアウトする |
+| `/user [SUBCOMMAND]` | 今の GitHub ユーザーを管理する |
+| `/update`・`/upgrade` | CLI を最新版に更新する |
+| `/downgrade VERSION` | 指定したバージョンの CLI を落として再起動する |
+| `/version` | バージョン情報を表示して、更新がないか確認する |
+| `/changelog [OPTIONS]` | CLI の変更履歴を表示する（AI 要約オプションあり） |
+| `/feedback`・`/bug` | CLI へのフィードバックを送る |
+| `/help` | 対話コマンドのヘルプを表示する |
+| `/exit`・`/quit` | CLI を終了する |
+| `/clikit [COMPONENT]`・`/tuikit [COMPONENT]` | CLI/TUI のデザイン部品をプレビューする |
 
 > **出典:** [Copilot CLI command reference — GitHub Docs](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference) / [Use Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli) / [chronicle](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/chronicle) / [fleet](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/fleet) / [Copilot CLI in VS Code](https://code.visualstudio.com/docs/copilot/agents/copilot-cli)
 
@@ -360,10 +360,10 @@ VS Code 以外の IDE で使えるスラッシュコマンド（GitHub 公式チ
 
 | コマンド | 対象 IDE | 説明 |
 |----------|----------|------|
-| `/optimize` | Visual Studio | 選択コードの実行時間を分析・改善 |
-| `/simplify` | Xcode | 現在の選択コードを簡略化 |
-| `/doc` | Visual Studio / Xcode | このシンボルのドキュメントコメントを追加 |
-| `/clear`・`/delete`・`/new`・`/rename` | GitHub Web (Copilot Chat) | 会話のクリア・削除・新規・改名 |
+| `/optimize` | Visual Studio | 選んだコードの実行速度を分析して改善してくれる |
+| `/simplify` | Xcode | 選んだコードをシンプルに書き直してくれる |
+| `/doc` | Visual Studio / Xcode | このシンボルにドキュメントコメントを付けてくれる |
+| `/clear`・`/delete`・`/new`・`/rename` | GitHub Web (Copilot Chat) | 会話のクリア・削除・新規作成・改名をする |
 
 > **出典:** [GitHub Docs cheat sheet](https://docs.github.com/en/copilot/reference/cheat-sheet) / [Chat cheat sheet](https://docs.github.com/en/copilot/reference/chat-cheat-sheet)
 > **メモ:** Eclipse 向けのスラッシュコマンド・参加者・変数は公式に記載なし。
@@ -376,20 +376,20 @@ VS Code 以外の IDE で使えるスラッシュコマンド（GitHub 公式チ
 
 | コマンド | 種別 | 内容 | 時期 |
 |----------|------|------|------|
-| `/autoApprove`・`/disableAutoApprove`（別名 `/yolo`・`/disableYolo`） | `/` | 全ツールのグローバル自動承認トグル | v1.110（2026年2月） |
-| `/compact` | `/` | 会話履歴の手動圧縮（`/compact <指示>` 可） | v1.110 |
-| `/fork` | `/` | 会話履歴を引き継いだ分岐セッション | v1.110 導入 → v1.111 で手動フォーク強化 |
-| `/create-prompt`・`/create-instruction`・`/create-skill`・`/create-agent`・`/create-hook` | `/` | チャットから各種カスタマイズファイルを生成 | v1.110 |
-| `/troubleshoot` | `/` | エージェントのデバッグログをチャットで分析（プレビュー） | v1.112 |
-| `/remote on`/`off` | `/` | CLI セッションを GitHub.com/モバイルから監視・操作（実験的） | 2026年3月（April releases 記事） |
-| `/settings` | `/` | Copilot CLI 設定の一元化 | 2026年6月（May releases 記事） |
-| `/chronicle`（+ サブコマンド） | `/` | セッション履歴の横断照会。実験的導入 → 拡充 | 2026年3月導入 → 5〜6月拡充 |
+| `/autoApprove`・`/disableAutoApprove`（別名 `/yolo`・`/disableYolo`） | `/` | 全ツールの自動承認をまとめて切り替えられるように | v1.110（2026年2月） |
+| `/compact` | `/` | 会話履歴を手動で圧縮できるように（`/compact <指示>` 可） | v1.110 |
+| `/fork` | `/` | 会話履歴を引き継いで枝分かれできるように | v1.110 導入 → v1.111 で手動フォーク強化 |
+| `/create-prompt`・`/create-instruction`・`/create-skill`・`/create-agent`・`/create-hook` | `/` | チャットから各種カスタマイズファイルを作れるように | v1.110 |
+| `/troubleshoot` | `/` | エージェントのデバッグログをチャットで分析できるように（プレビュー） | v1.112 |
+| `/remote on`/`off` | `/` | CLI セッションを GitHub.com/モバイルから監視・操作できるように（実験的） | 2026年3月（April releases 記事） |
+| `/settings` | `/` | Copilot CLI の設定を一カ所にまとめられるように | 2026年6月（May releases 記事） |
+| `/chronicle`（+ サブコマンド） | `/` | セッション履歴をまたいで照会できるように。実験的導入 → 拡充 | 2026年3月導入 → 5〜6月拡充 |
 | `#codebase` | `#` | 単一の自動管理インデックスへの純セマンティック検索に変更 | 2026年2月（March releases 記事） |
-| `#githubTextSearch` | `#` | リポジトリ/Org 横断の grep 風テキスト検索 | 2026年3月（April releases 記事） |
-| `#rename` | `#` | LSP ベースの高精度リネーム | v1.110 |
-| `#usages` | `#` | 参照ナビのパフォーマンス改善 | v1.110 |
-| `#debugEventsSnapshot` | `#` | デバッグイベントのスナップショット添付 | v1.111 |
-| `#sym:Name` | `#` | シンボル名の自動コンテキスト変換 | v1.112 |
+| `#githubTextSearch` | `#` | リポジトリ/Org をまたいで grep 風にテキスト検索できるように | 2026年3月（April releases 記事） |
+| `#rename` | `#` | LSP ベースで高精度にリネームできるように | v1.110 |
+| `#usages` | `#` | 参照ナビが速くなった | v1.110 |
+| `#debugEventsSnapshot` | `#` | デバッグイベントのスナップショットを添付できるように | v1.111 |
+| `#sym:Name` | `#` | シンボル名を自動でコンテキストに変換できるように | v1.112 |
 
 > **出典:** [github.blog/changelog（VS Code 月次リリース）](https://github.blog/changelog/2026-06-03-github-copilot-in-visual-studio-code-may-releases/) / [/chronicle 告知](https://github.blog/changelog/2026-06-02-gain-insights-across-your-agent-sessions-with-chronicle/) / [VS Code v1.110](https://code.visualstudio.com/updates/v1_110) / [v1.111](https://code.visualstudio.com/updates/v1_111) / [v1.112](https://code.visualstudio.com/updates/v1_112)
 > **メモ:** 「April releases」記事は公開日が 2026-05-06 で、記事タイトルの月と公開日が約1ヶ月ずれる。本表は記事内容に従って時期を記載。
@@ -402,31 +402,31 @@ VS Code 以外の IDE で使えるスラッシュコマンド（GitHub 公式チ
 
 | 機能 | 説明 |
 |------|------|
-| インライン補完 | 入力に合わせて補完候補を表示 |
-| コードコメント | コメントに指示を書いて補完を引き出す |
-| コンテキストメニュー | 右クリックで説明・修正・レビュー |
-| Code Actions（電球） | リンタ/コンパイラエラーへの提案 |
-| F2 リネーム | リネーム時に AI 提案を表示 |
+| インライン補完 | 入力に合わせて、続きの候補を出してくれる |
+| コードコメント | コメントに指示を書くと、それを汲んで補完してくれる |
+| コンテキストメニュー | 右クリックから説明・修正・レビューを呼べる |
+| Code Actions（電球） | リンタ/コンパイラのエラーに、直し方を提案してくれる |
+| F2 リネーム | リネームする時に、AI が名前候補を出してくれる |
 
 ### エージェントの権限・拡張
 
 | 機能 | 説明 |
 |------|------|
-| 権限レベル | Default Approvals / Bypass Approvals / Autopilot |
-| ツール/ターミナルの自動承認 | 呼び出しの自動承認を有効化 |
-| MCP 設定 | MCP サーバーでエージェント機能を拡張 |
-| サードパーティエージェント | Claude Agent（プレビュー）/ OpenAI など |
-| メモリ機能 | 会話をまたいで永続的なメモを保存・想起 |
+| 権限レベル | Default Approvals / Bypass Approvals / Autopilot の3段階から選べる |
+| ツール/ターミナルの自動承認 | 呼び出しを毎回確認せず、自動承認にできる |
+| MCP 設定 | MCP サーバーをつないで、エージェントの機能を拡張できる |
+| サードパーティエージェント | Claude Agent（プレビュー）/ OpenAI などを使える |
+| メモリ機能 | 会話をまたいでメモを覚えておいて、後で思い出してくれる |
 
 ### ソース管理・コードレビュー
 
 | 機能 | 説明 |
 |------|------|
-| `#changes` | 現在のソース管理の変更をコンテキストに追加 |
-| コミットメッセージ生成 | 変更内容からコミットメッセージを生成 |
-| PR 説明生成 | PR のタイトル・説明を生成 |
-| マージ競合 | Git のマージ競合の解決を AI が支援 |
-| Review Selection / Code Review ボタン | 選択コード/未コミット変更をレビュー |
+| `#changes` | 今の変更内容を、コンテキストに足す |
+| コミットメッセージ生成 | 変更内容から、コミットメッセージを書いてくれる |
+| PR 説明生成 | PR のタイトルと説明を書いてくれる |
+| マージ競合 | Git のマージ競合の解決を、AI が手伝ってくれる |
+| Review Selection / Code Review ボタン | 選んだコードや未コミットの変更をレビューしてくれる |
 
 > **出典:** [AI features cheat sheet — VS Code Docs](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
 
@@ -436,13 +436,13 @@ VS Code 以外の IDE で使えるスラッシュコマンド（GitHub 公式チ
 
 | 機能 | 設定/呼び出し | 説明 |
 |------|---------------|------|
-| カスタム指示（instructions） | `/init`・`/instructions`・`/create-instruction` | タスク共通のガイドライン・規約を定義（`.github/copilot-instructions.md` 等） |
-| 再利用プロンプトファイル | `/prompts`・`/create-prompt` / 実行は `/<prompt name>` | よく使うプロンプトを `.prompt.md` として定義・再利用 |
-| エージェントスキル | `/skills`・`/create-skill` / 実行は `/<skill name>` | 複数ステップのワークフローをスキル化 |
-| カスタムエージェント | `/agents`・`/create-agent` | チャットの挙動・使えるツール・ペルソナを定義 |
-| フック | `/hooks`・`/create-hook` | ライフサイクル自動化 |
-| MCP サーバー | `/mcp`（CLI）/ プロンプトは `/<server>.<prompt>` | 外部ツール/プロンプトを接続して拡張 |
-| プロンプトファイル内の入力変数 | `${input:変数名:プレースホルダ}`・`${selection}` | プロンプトにユーザー入力や選択範囲を埋め込む |
+| カスタム指示（instructions） | `/init`・`/instructions`・`/create-instruction` | 全タスク共通のルール・規約を決めておける（`.github/copilot-instructions.md` 等） |
+| 再利用プロンプトファイル | `/prompts`・`/create-prompt` / 実行は `/<prompt name>` | よく使うプロンプトを `.prompt.md` に保存して、使い回せる |
+| エージェントスキル | `/skills`・`/create-skill` / 実行は `/<skill name>` | 複数ステップの作業手順を、スキルとしてまとめられる |
+| カスタムエージェント | `/agents`・`/create-agent` | チャットの振る舞い・使えるツール・口調を決められる |
+| フック | `/hooks`・`/create-hook` | 節目ごとの処理を、自動で走らせられる |
+| MCP サーバー | `/mcp`（CLI）/ プロンプトは `/<server>.<prompt>` | 外部のツールやプロンプトをつないで、機能を増やせる |
+| プロンプトファイル内の入力変数 | `${input:変数名:プレースホルダ}`・`${selection}` | プロンプトに、ユーザー入力や選択範囲を差し込める |
 
 > **出典:** [Customization overview](https://code.visualstudio.com/docs/copilot/customization/overview) / [Custom instructions](https://code.visualstudio.com/docs/copilot/customization/custom-instructions) / [Prompt files](https://code.visualstudio.com/docs/copilot/customization/prompt-files) / [Agent skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills) / [Custom agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents) / [Hooks](https://code.visualstudio.com/docs/copilot/customization/hooks)
 
